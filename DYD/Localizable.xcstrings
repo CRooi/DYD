@@ -1,0 +1,266 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
+    },
+    "%lld" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
+    },
+    "%llds" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld秒"
+          }
+        }
+      }
+    },
+    "Author" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "作者"
+          }
+        }
+      }
+    },
+    "Bit Rate" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "比特率"
+          }
+        }
+      }
+    },
+    "Detail" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "详情"
+          }
+        }
+      }
+    },
+    "Download" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下载"
+          }
+        }
+      }
+    },
+    "Download and save the video." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下载并保存视频。"
+          }
+        }
+      }
+    },
+    "Duration" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "持续时间"
+          }
+        }
+      }
+    },
+    "Follower" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关注者"
+          }
+        }
+      }
+    },
+    "Format" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "格式"
+          }
+        }
+      }
+    },
+    "FPS" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FPS"
+          }
+        }
+      }
+    },
+    "History" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "历史"
+          }
+        }
+      }
+    },
+    "Home" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "主页"
+          }
+        }
+      }
+    },
+    "Interface is unstable, retry if needed." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "接口不稳定，必要时请重试，"
+          }
+        }
+      }
+    },
+    "Meta Data" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "元数据"
+          }
+        }
+      }
+    },
+    "Music" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "原声"
+          }
+        }
+      }
+    },
+    "Nickname" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "昵称"
+          }
+        }
+      }
+    },
+    "No History" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无历史"
+          }
+        }
+      }
+    },
+    "Parse" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "解析"
+          }
+        }
+      }
+    },
+    "Parsing..." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "解析中…"
+          }
+        }
+      }
+    },
+    "Paste your share link or text." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "粘贴你的分享链接或文字。"
+          }
+        }
+      }
+    },
+    "Share link or text" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "粘贴你的分享链接或文字"
+          }
+        }
+      }
+    },
+    "Title" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "标题"
+          }
+        }
+      }
+    },
+    "Video" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "视频"
+          }
+        }
+      }
+    },
+    "Welcome to DYD" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "欢迎使用 DYD"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

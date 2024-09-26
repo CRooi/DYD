@@ -54,7 +54,7 @@ struct ParseView: View {
                         .foregroundColor(.gray)
                 } else {
                     ForEach(history) { item in
-                        NavigationLink(destination: ParseDetailView()) {
+                        NavigationLink(destination: ParseDetailView(parseItem: item.parseItem)) {
                             ParsePreviewView(parseItem: item.parseItem)
                         }
                     }
@@ -81,7 +81,7 @@ struct ParseView: View {
                     switch response.result {
                     case .success(let value):
                         // 打印整个响应数据
-                        debugPrint("Full JSON Response: \(value)")
+//                        debugPrint("Full JSON Response: \(value)")
                         
                         // 尝试解析 data
                         guard let json = value as? [String: Any],
@@ -107,9 +107,18 @@ struct ParseView: View {
                             debugPrint("Missing 'video' data")
                             return
                         }
-                        let videoDuration = (videoData["big_thumbs"] as? [String: Any])?["duration"] as? Double ?? 0.0
-                        let fps = (videoData["bit_rate"] as? [String: Any])?["FPS"] as? Double ?? 0.0
-                        let bitRate = (videoData["bit_rate"] as? [String: Any])?["bit_rate"] as? Double ?? 0.0
+
+                        // 修改 big_thumbs 和 bit_rate 的解包方式
+                        let videoDuration: Double = data["duration"] as? Double ?? 0.0
+
+                        var fps: Double = 0.0
+                        var bitRate: Double = 0.0
+                        if let bitRates = videoData["bit_rate"] as? [[String: Any]],
+                           let firstBitRate = bitRates.first {
+                            fps = firstBitRate["FPS"] as? Double ?? 0.0
+                            bitRate = firstBitRate["bit_rate"] as? Double ?? 0.0
+                        }
+                        
                         let format = videoData["format"] as? String ?? "Unknown Format"
                         
                         // 解包 video URL 和 cover URL
