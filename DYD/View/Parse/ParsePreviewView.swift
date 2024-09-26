@@ -27,7 +27,7 @@ struct ParsePreviewView: View {
                 .frame(width: 42, height: 42)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
             VStack(alignment: .leading, spacing: 2) {
-                Text(parseItem.caption ?? "No Caption")
+                Text(parseItem.caption == "" ? "No Caption" : parseItem.caption)
                     .font(.system(.body, design: .rounded))
                     .lineLimit(1)
                     .truncationMode(.tail)
