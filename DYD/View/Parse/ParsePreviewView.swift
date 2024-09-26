@@ -32,8 +32,23 @@ struct ParsePreviewView: View {
                     .lineLimit(1)
                     .truncationMode(.tail)
                     .bold()
+                
                 Group {
-                    Text("\(parseItem.author.name)\n\(formattedDate)")
+                    HStack(spacing: 2) {
+                        Text("\(parseItem.author.name)")
+                        
+                        if !parseItem.author.customVerify.isEmpty {
+                            Image(systemName: "checkmark")
+                                .foregroundColor(.orange)
+                        }
+                        
+                        if !parseItem.author.enterpriseVerifyReason.isEmpty {
+                            Image(systemName: "checkmark")
+                                .foregroundColor(.blue)
+                        }
+                    }
+                    
+                    Text("\(formattedDate)")
                 }
                 .font(.system(.footnote, design: .rounded))
                 .foregroundStyle(.secondary)

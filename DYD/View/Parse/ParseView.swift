@@ -132,7 +132,7 @@ struct ParseView: View {
                         debugPrint("Music Title: \(musicTitle), Music URL: \(musicUrl)")
                         
                         // 解析其他数据
-                        let caption = data["caption"] as? String ?? "No Caption"
+                        let caption = data["desc"] as? String ?? "No Caption"
                         let createdTime = data["create_time"] as? TimeInterval ?? 0.0
                         debugPrint("Caption: \(caption), Created Time: \(createdTime)")
                         
