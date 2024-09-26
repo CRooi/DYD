@@ -11,7 +11,7 @@ import SwiftUI
 struct DYDApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }

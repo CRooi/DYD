@@ -6,43 +6,20 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXContainerItemProxy section */
-		9FCB86BB2CA14C8F000005C7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9FCB86A22CA14C8E000005C7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9FCB86A92CA14C8E000005C7;
-			remoteInfo = DYD;
-		};
-		9FCB86C52CA14C8F000005C7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9FCB86A22CA14C8E000005C7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9FCB86A92CA14C8E000005C7;
-			remoteInfo = DYD;
-		};
-/* End PBXContainerItemProxy section */
+/* Begin PBXBuildFile section */
+		9F1DDE252CA55C1000B1C97D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9F1DDE242CA55C1000B1C97D /* Kingfisher */; };
+		9F244C162CA19FB500470349 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9F244C152CA19FB500470349 /* Alamofire */; };
+		9FCB86E32CA14DEA000005C7 /* ColorfulX in Frameworks */ = {isa = PBXBuildFile; productRef = 9FCB86E22CA14DEA000005C7 /* ColorfulX */; };
+/* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9FCB86AA2CA14C8E000005C7 /* DYD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYD.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9FCB86BA2CA14C8F000005C7 /* DYDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DYDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9FCB86C42CA14C8F000005C7 /* DYDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DYDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		9FCB86AC2CA14C8E000005C7 /* DYD */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = DYD;
-			sourceTree = "<group>";
-		};
-		9FCB86BD2CA14C8F000005C7 /* DYDTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = DYDTests;
-			sourceTree = "<group>";
-		};
-		9FCB86C72CA14C8F000005C7 /* DYDUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = DYDUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -52,20 +29,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9FCB86B72CA14C8F000005C7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9FCB86C12CA14C8F000005C7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				9F1DDE252CA55C1000B1C97D /* Kingfisher in Frameworks */,
+				9FCB86E32CA14DEA000005C7 /* ColorfulX in Frameworks */,
+				9F244C162CA19FB500470349 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,8 +42,6 @@
 			isa = PBXGroup;
 			children = (
 				9FCB86AC2CA14C8E000005C7 /* DYD */,
-				9FCB86BD2CA14C8F000005C7 /* DYDTests */,
-				9FCB86C72CA14C8F000005C7 /* DYDUITests */,
 				9FCB86AB2CA14C8E000005C7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,8 +50,6 @@
 			isa = PBXGroup;
 			children = (
 				9FCB86AA2CA14C8E000005C7 /* DYD.app */,
-				9FCB86BA2CA14C8F000005C7 /* DYDTests.xctest */,
-				9FCB86C42CA14C8F000005C7 /* DYDUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,56 +74,13 @@
 			);
 			name = DYD;
 			packageProductDependencies = (
+				9FCB86E22CA14DEA000005C7 /* ColorfulX */,
+				9F244C152CA19FB500470349 /* Alamofire */,
+				9F1DDE242CA55C1000B1C97D /* Kingfisher */,
 			);
 			productName = DYD;
 			productReference = 9FCB86AA2CA14C8E000005C7 /* DYD.app */;
 			productType = "com.apple.product-type.application";
-		};
-		9FCB86B92CA14C8F000005C7 /* DYDTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9FCB86D12CA14C8F000005C7 /* Build configuration list for PBXNativeTarget "DYDTests" */;
-			buildPhases = (
-				9FCB86B62CA14C8F000005C7 /* Sources */,
-				9FCB86B72CA14C8F000005C7 /* Frameworks */,
-				9FCB86B82CA14C8F000005C7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9FCB86BC2CA14C8F000005C7 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				9FCB86BD2CA14C8F000005C7 /* DYDTests */,
-			);
-			name = DYDTests;
-			packageProductDependencies = (
-			);
-			productName = DYDTests;
-			productReference = 9FCB86BA2CA14C8F000005C7 /* DYDTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		9FCB86C32CA14C8F000005C7 /* DYDUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9FCB86D42CA14C8F000005C7 /* Build configuration list for PBXNativeTarget "DYDUITests" */;
-			buildPhases = (
-				9FCB86C02CA14C8F000005C7 /* Sources */,
-				9FCB86C12CA14C8F000005C7 /* Frameworks */,
-				9FCB86C22CA14C8F000005C7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9FCB86C62CA14C8F000005C7 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				9FCB86C72CA14C8F000005C7 /* DYDUITests */,
-			);
-			name = DYDUITests;
-			packageProductDependencies = (
-			);
-			productName = DYDUITests;
-			productReference = 9FCB86C42CA14C8F000005C7 /* DYDUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -176,14 +95,6 @@
 					9FCB86A92CA14C8E000005C7 = {
 						CreatedOnToolsVersion = 16.0;
 					};
-					9FCB86B92CA14C8F000005C7 = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = 9FCB86A92CA14C8E000005C7;
-					};
-					9FCB86C32CA14C8F000005C7 = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = 9FCB86A92CA14C8E000005C7;
-					};
 				};
 			};
 			buildConfigurationList = 9FCB86A52CA14C8E000005C7 /* Build configuration list for PBXProject "DYD" */;
@@ -195,34 +106,23 @@
 			);
 			mainGroup = 9FCB86A12CA14C8E000005C7;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				9FCB86E12CA14DEA000005C7 /* XCLocalSwiftPackageReference "../../ColorfulX-5.3.1" */,
+				9F244C142CA19FB500470349 /* XCLocalSwiftPackageReference "../../Alamofire-5.9.1" */,
+				9F1DDE232CA55C1000B1C97D /* XCLocalSwiftPackageReference "../../Kingfisher-8.0.3" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9FCB86AB2CA14C8E000005C7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				9FCB86A92CA14C8E000005C7 /* DYD */,
-				9FCB86B92CA14C8F000005C7 /* DYDTests */,
-				9FCB86C32CA14C8F000005C7 /* DYDUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9FCB86A82CA14C8E000005C7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9FCB86B82CA14C8F000005C7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9FCB86C22CA14C8F000005C7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -239,34 +139,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9FCB86B62CA14C8F000005C7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9FCB86C02CA14C8F000005C7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		9FCB86BC2CA14C8F000005C7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9FCB86A92CA14C8E000005C7 /* DYD */;
-			targetProxy = 9FCB86BB2CA14C8F000005C7 /* PBXContainerItemProxy */;
-		};
-		9FCB86C62CA14C8F000005C7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9FCB86A92CA14C8E000005C7 /* DYD */;
-			targetProxy = 9FCB86C52CA14C8F000005C7 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		9FCB86CC2CA14C8F000005C7 /* Debug */ = {
@@ -446,78 +319,6 @@
 			};
 			name = Release;
 		};
-		9FCB86D22CA14C8F000005C7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 99L5X23F45;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.crooi.DYDTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DYD.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DYD";
-			};
-			name = Debug;
-		};
-		9FCB86D32CA14C8F000005C7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 99L5X23F45;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.crooi.DYDTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DYD.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DYD";
-			};
-			name = Release;
-		};
-		9FCB86D52CA14C8F000005C7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 99L5X23F45;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.crooi.DYDUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DYD;
-			};
-			name = Debug;
-		};
-		9FCB86D62CA14C8F000005C7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 99L5X23F45;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.crooi.DYDUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DYD;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -539,25 +340,37 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9FCB86D12CA14C8F000005C7 /* Build configuration list for PBXNativeTarget "DYDTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9FCB86D22CA14C8F000005C7 /* Debug */,
-				9FCB86D32CA14C8F000005C7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9FCB86D42CA14C8F000005C7 /* Build configuration list for PBXNativeTarget "DYDUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9FCB86D52CA14C8F000005C7 /* Debug */,
-				9FCB86D62CA14C8F000005C7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		9F1DDE232CA55C1000B1C97D /* XCLocalSwiftPackageReference "../../Kingfisher-8.0.3" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../Kingfisher-8.0.3";
+		};
+		9F244C142CA19FB500470349 /* XCLocalSwiftPackageReference "../../Alamofire-5.9.1" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../Alamofire-5.9.1";
+		};
+		9FCB86E12CA14DEA000005C7 /* XCLocalSwiftPackageReference "../../ColorfulX-5.3.1" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../ColorfulX-5.3.1";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9F1DDE242CA55C1000B1C97D /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Kingfisher;
+		};
+		9F244C152CA19FB500470349 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Alamofire;
+		};
+		9FCB86E22CA14DEA000005C7 /* ColorfulX */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ColorfulX;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9FCB86A22CA14C8E000005C7 /* Project object */;
 }
