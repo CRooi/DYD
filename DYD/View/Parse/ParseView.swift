@@ -1,13 +1,24 @@
+//
+//  ParseView.swift
+//  DYD
+//
+//  Created by CRooi on 2024/9/26.
+//
+
 import SwiftUI
 import Alamofire
 
-struct HistoryItem: Codable, Identifiable {
+struct HistoryItem: Codable, Identifiable, Equatable {
     let id: UUID
     let parseItem: ParseItem
     
     init(parseItem: ParseItem) {
         self.id = UUID()
         self.parseItem = parseItem
+    }
+
+    static func == (lhs: HistoryItem, rhs: HistoryItem) -> Bool {
+        return lhs.id == rhs.id && lhs.parseItem == rhs.parseItem
     }
 }
 
@@ -54,16 +65,25 @@ struct ParseView: View {
                         .foregroundColor(.gray)
                 } else {
                     ForEach(history) { item in
-                        NavigationLink(destination: ParseDetailView(parseItem: item.parseItem)) {
+                        NavigationLink(destination: ParseDetailView(parseItem: item.parseItem, onDelete: {
+                            withAnimation {
+                                deleteHistoryItem(item)
+                            }
+                        })) {
                             ParsePreviewView(parseItem: item.parseItem)
                         }
                     }
-                    .onDelete(perform: deleteHistoryItems)
+                    .onDelete { indexSet in
+                        withAnimation {
+                            deleteHistoryItems(at: indexSet)
+                        }
+                    }
                 }
             } header: {
                 Text("History")
             }
         }
+        .animation(.default, value: history)
     }
     
     func parse() {
@@ -81,7 +101,7 @@ struct ParseView: View {
                     switch response.result {
                     case .success(let value):
                         // 打印整个响应数据
-//                        debugPrint("Full JSON Response: \(value)")
+                        // debugPrint("Full JSON Response: \(value)")
                         
                         // 尝试解析 data
                         guard let json = value as? [String: Any],
@@ -177,7 +197,7 @@ struct ParseView: View {
                             author: author,
                             music: music,
                             video: video,
-                            originLink: matchedURL
+                            originLink: share
                         ))
                         
                         self.history.insert(newItem, at: 0)
@@ -217,5 +237,12 @@ struct ParseView: View {
     func deleteHistoryItems(at offsets: IndexSet) {
         history.remove(atOffsets: offsets)
         saveHistory()
+    }
+    
+    func deleteHistoryItem(_ item: HistoryItem) {
+        if let index = history.firstIndex(where: { $0.id == item.id }) {
+            history.remove(at: index)
+            saveHistory()
+        }
     }
 }

@@ -51,7 +51,13 @@ struct WelcomeView: View {
 
             HStack {
                 Image(systemName: "2.circle.fill")
-                Text("Download and save the video.")
+                Text("Parse the video.")
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            
+            HStack {
+                Image(systemName: "3.circle.fill")
+                Text("Download and save the video or music.")
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }

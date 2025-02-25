@@ -38,12 +38,12 @@ struct ParsePreviewView: View {
                         Text("\(parseItem.author.name)")
                         
                         if !parseItem.author.customVerify.isEmpty {
-                            Image(systemName: "checkmark")
+                            Image(systemName: "checkmark.seal.fill")
                                 .foregroundColor(.orange)
                         }
                         
                         if !parseItem.author.enterpriseVerifyReason.isEmpty {
-                            Image(systemName: "checkmark")
+                            Image(systemName: "checkmark.seal.fill")
                                 .foregroundColor(.blue)
                         }
                     }

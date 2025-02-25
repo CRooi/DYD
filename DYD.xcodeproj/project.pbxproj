@@ -13,12 +13,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F673D852D6DAF8100E748C0 /* Alamofire-5.9.1 */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "Alamofire-5.9.1"; path = "../../libraries/Alamofire-5.9.1"; sourceTree = "<group>"; };
+		9F673D862D6DAF8900E748C0 /* ColorfulX-5.3.1 */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "ColorfulX-5.3.1"; path = "../../libraries/ColorfulX-5.3.1"; sourceTree = "<group>"; };
+		9F673D872D6DAF9000E748C0 /* Kingfisher-8.0.3 */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "Kingfisher-8.0.3"; path = "../../libraries/Kingfisher-8.0.3"; sourceTree = "<group>"; };
 		9FCB86AA2CA14C8E000005C7 /* DYD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		9FA3F2422CA5A39B008A1EB3 /* Exceptions for "DYD" folder in "DYD" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 9FCB86A92CA14C8E000005C7 /* DYD */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		9FCB86AC2CA14C8E000005C7 /* DYD */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				9FA3F2422CA5A39B008A1EB3 /* Exceptions for "DYD" folder in "DYD" target */,
+			);
 			path = DYD;
 			sourceTree = "<group>";
 		};
@@ -38,10 +54,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F673D842D6DAF8100E748C0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F673D872D6DAF9000E748C0 /* Kingfisher-8.0.3 */,
+				9F673D862D6DAF8900E748C0 /* ColorfulX-5.3.1 */,
+				9F673D852D6DAF8100E748C0 /* Alamofire-5.9.1 */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9FCB86A12CA14C8E000005C7 = {
 			isa = PBXGroup;
 			children = (
 				9FCB86AC2CA14C8E000005C7 /* DYD */,
+				9F673D842D6DAF8100E748C0 /* Frameworks */,
 				9FCB86AB2CA14C8E000005C7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -273,9 +300,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DYD/Preview Content\"";
-				DEVELOPMENT_TEAM = 99L5X23F45;
+				DEVELOPMENT_TEAM = QFKRT2D7D7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DYD/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to save videos to your photo library.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -302,9 +331,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DYD/Preview Content\"";
-				DEVELOPMENT_TEAM = 99L5X23F45;
+				DEVELOPMENT_TEAM = QFKRT2D7D7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DYD/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to save videos to your photo library.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ParseItem: Codable {
+struct ParseItem: Codable, Equatable {
     var caption: String
     var createdTime: TimeInterval
     var author: Author
@@ -16,7 +16,7 @@ struct ParseItem: Codable {
     var originLink: String
 }
 
-struct Author: Codable {
+struct Author: Codable, Equatable {
     var name: String
     var customVerify: String
     var enterpriseVerifyReason: String
@@ -24,7 +24,7 @@ struct Author: Codable {
     var follower: Int
 }
 
-struct Music: Codable {
+struct Music: Codable, Equatable {
     var author: String
     var avatarUrl: String
     var url: String
@@ -32,7 +32,7 @@ struct Music: Codable {
     var duration: Double
 }
 
-struct Video: Codable {
+struct Video: Codable, Equatable {
     var duration: Double
     var fps: Double
     var bitRate: Double
