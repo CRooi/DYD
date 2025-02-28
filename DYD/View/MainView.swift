@@ -23,6 +23,10 @@ struct MainView: View {
             DownloadView()
                 .tabItem { Label("Download", systemImage: "square.and.arrow.down") }
                 .tag(2)
+            
+            SettingsView()
+                .tabItem { Label("Settings", systemImage: "gear") }
+                .tag(3)
         }
         .onAppear {
             setupNotifications()
@@ -35,6 +39,7 @@ struct MainView: View {
             object: nil,
             queue: .main
         ) { _ in
+            // Always switch to downloads tab when notification is received
             selectedTab = 2
         }
     }

@@ -12,6 +12,7 @@ struct ParsePreviewView: View {
     var parseItem: ParseItem
     
     var formattedDate: String {
+        // 使用解析任务创建的时间
         let date = Date(timeIntervalSince1970: parseItem.createdTime)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"

@@ -1,10 +1,12 @@
 import Foundation
 import SwiftUI
+import Photos
 
 class DownloadManager: NSObject, ObservableObject, URLSessionDownloadDelegate {
     @Published var downloads: [DownloadItem] = []
     private var downloadTasks: [UUID: URLSessionDownloadTask] = [:]
     private var session: URLSession!
+    @ObservedObject private var userSettings = UserSettings.shared
 
     // 单例实例
     static let shared = DownloadManager()
@@ -14,6 +16,14 @@ class DownloadManager: NSObject, ObservableObject, URLSessionDownloadDelegate {
         let config = URLSessionConfiguration.background(withIdentifier: "io.crooi.dyd.download")
         session = URLSession(configuration: config, delegate: self, delegateQueue: nil)
         loadDownloads()
+        
+        // 添加自动下载通知观察者
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleAddDownloadTaskNotification),
+            name: Notification.Name("AddDownloadTask"),
+            object: nil
+        )
     }
 
     func addDownload(from parseItem: ParseItem, type: DownloadType) {
@@ -40,6 +50,20 @@ class DownloadManager: NSObject, ObservableObject, URLSessionDownloadDelegate {
         downloads.append(downloadItem)
         saveDownloads()
         startDownload(downloadItem)
+    }
+    
+    // 处理自动下载通知的方法
+    @objc private func handleAddDownloadTaskNotification(notification: Notification) {
+        if let parseItem = notification.userInfo?["parseItem"] as? ParseItem {
+            addDownload(from: parseItem, type: .video)
+            
+            // 可选：发送通知切换到下载标签页
+            NotificationCenter.default.post(
+                name: NSNotification.Name("SwitchToDownloadTab"), 
+                object: nil,
+                userInfo: ["fromAutoDownload": true]
+            )
+        }
     }
 
     private func startDownload(_ item: DownloadItem) {
@@ -82,6 +106,11 @@ class DownloadManager: NSObject, ObservableObject, URLSessionDownloadDelegate {
                 item.status = .completed
                 item.localPath = destinationURL.absoluteString
                 self.saveDownloads()
+                
+                // 如果启用了自动保存到照片图库且是视频，则自动保存
+                if self.userSettings.autoSaveToPhotoLibrary && item.type == .video {
+                    self.saveToPhotoLibrary(at: destinationURL)
+                }
             }
         } catch {
             DispatchQueue.main.async {
@@ -173,8 +202,29 @@ class DownloadManager: NSObject, ObservableObject, URLSessionDownloadDelegate {
     }
 
     private func getDownloadsURL() -> URL {
-        let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[
-            0]
+        let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         return documentsPath.appendingPathComponent("downloads.json")
+    }
+    
+    // 保存视频到照片图库
+    private func saveToPhotoLibrary(at fileURL: URL) {
+        PHPhotoLibrary.requestAuthorization { status in
+            if status == .authorized {
+                PHPhotoLibrary.shared().performChanges({
+                    PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: fileURL)
+                }) { success, error in
+                    DispatchQueue.main.async {
+                        if success {
+                            NotificationCenter.default.post(name: NSNotification.Name("ShowToast"), 
+                                                           object: nil, 
+                                                           userInfo: ["message": "视频已自动保存到照片图库"])
+                        } else {
+                            let errorMessage = error?.localizedDescription ?? "未知错误"
+                            print("自动保存视频失败: \(errorMessage)")
+                        }
+                    }
+                }
+            }
+        }
     }
 }

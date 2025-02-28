@@ -26,6 +26,7 @@ struct ParseView: View {
     @State private var share: String = ""
     @State private var history: [HistoryItem] = []
     @State private var isParsing: Bool = false
+    @ObservedObject private var userSettings = UserSettings.shared
     
     var body: some View {
         NavigationView {
@@ -88,6 +89,9 @@ struct ParseView: View {
     
     func parse() {
         isParsing = true
+        
+        // 获取当前时间作为解析任务创建时间
+        let currentTime = Date().timeIntervalSince1970
         
         let urlPattern = "https?://[^\\s]+"
         let regex = try? NSRegularExpression(pattern: urlPattern)
@@ -191,24 +195,41 @@ struct ParseView: View {
                             coverUrl: coverUrl
                         )
                         
-                        let newItem = HistoryItem(parseItem: ParseItem(
+                        // 在创建 ParseItem 对象时使用当前时间
+                        let parseItem = ParseItem(
                             caption: caption,
-                            createdTime: createdTime,
+                            createdTime: currentTime, // 使用当前时间作为解析任务创建时间
                             author: author,
                             music: music,
                             video: video,
                             originLink: share
-                        ))
+                        )
+                        
+                        let newItem = HistoryItem(parseItem: parseItem)
                         
                         self.history.insert(newItem, at: 0)
                         saveHistory()
                         debugPrint("Parsed successfully: \(caption), \(authorName), \(createdTime)")
+                        
+                        // 检查是否启用了自动下载
+                        if self.userSettings.autoDownloadAfterParse {
+                            // 添加下载任务
+                            DownloadManager.shared.addDownload(from: parseItem, type: .video)
+                            
+                            // 通知切换到下载标签页
+                            NotificationCenter.default.post(
+                                name: NSNotification.Name("SwitchToDownloadTab"),
+                                object: nil,
+                                userInfo: ["fromAutoDownload": true]
+                            )
+                        }
                         
                     case .failure(let error):
                         debugPrint("Error: \(error)")
                     }
                     
                     self.isParsing = false
+                    self.share = "" // 清空输入框
                 }
             }
         } else {
